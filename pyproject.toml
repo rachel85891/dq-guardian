@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dq-guardian"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["anthropic==2.3.0", "claude-agent-sdk==0.2.174", "mcp==2.3.0"]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[tool.setuptools]
+packages = ["shared", "API", "API.harness", "SDK"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: calls the real API, needs ANTHROPIC_API_KEY"]

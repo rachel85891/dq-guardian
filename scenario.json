@@ -1,0 +1,23 @@
+{
+  "name": "dq-guardian-stage-a",
+  "sessions": [
+    {
+      "before": "load_day1",
+      "turns": [
+        "Profile the orders table and tell me what looks wrong.",
+        "On orders add rules: customer_id not_null, amount min 0, order_id unique. Then run the check.",
+        "Remember two things: the orders table owner is Dana, and my incident severity_threshold is high. Then log an incident for the duplicate order_id, severity high."
+      ]
+    },
+    {
+      "before": "load_day2",
+      "turns": [
+        "What do you remember about the orders table and my preferences?",
+        "New data was loaded. Re-run the orders checks and summarize.",
+        "Actually, set my severity_threshold to medium, not high.",
+        "Log an incident for the null customer_ids, severity medium.",
+        "List the open incidents."
+      ]
+    }
+  ]
+}

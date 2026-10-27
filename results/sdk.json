@@ -1,0 +1,170 @@
+{
+ "label": "sdk",
+ "model": "claude-opus-5-5",
+ "effort": "medium",
+ "turns": [
+  {
+   "tools": [
+    "profile_table",
+    "list_rules"
+   ],
+   "stop_reason": "end_turn",
+   "input": 4,
+   "cache_read": 1973,
+   "cache_write": 2236,
+   "output": 563,
+   "calls": 2,
+   "cost_usd": 0.029684799999999997,
+   "session": 1,
+   "turn": 1,
+   "seconds": 6.56,
+   "prompt": "Profile the orders table and tell me what looks wrong."
+  },
+  {
+   "tools": [
+    "add_rule",
+    "add_rule",
+    "add_rule",
+    "run_check"
+   ],
+   "stop_reason": "end_turn",
+   "input": 6,
+   "cache_read": 8226,
+   "cache_write": 1129,
+   "output": 733,
+   "calls": 3,
+   "cost_usd": 0.055046,
+   "session": 1,
+   "turn": 2,
+   "seconds": 7.79,
+   "prompt": "On orders add rules: customer_id not_null, amount min 0, order_id unique. Then run the check."
+  },
+  {
+   "tools": [
+    "remember",
+    "remember",
+    "log_incident"
+   ],
+   "stop_reason": "end_turn",
+   "input": 4,
+   "cache_read": 7164,
+   "cache_write": 883,
+   "output": 455,
+   "calls": 2,
+   "cost_usd": 0.0726588,
+   "session": 1,
+   "turn": 3,
+   "seconds": 4.63,
+   "prompt": "Remember two things: the orders table owner is Dana, and my incident severity_threshold is high. Then log an incident for the duplicate order_id, severity high."
+  },
+  {
+   "tools": [
+    "recall"
+   ],
+   "stop_reason": "end_turn",
+   "input": 4,
+   "cache_read": 8870,
+   "cache_write": 453,
+   "output": 183,
+   "calls": 2,
+   "cost_usd": 0.0817328,
+   "session": 2,
+   "turn": 1,
+   "seconds": 3.55,
+   "prompt": "What do you remember about the orders table and my preferences?"
+  },
+  {
+   "tools": [
+    "run_check",
+    "profile_table",
+    "list_incidents"
+   ],
+   "stop_reason": "end_turn",
+   "input": 4,
+   "cache_read": 9601,
+   "cache_write": 624,
+   "output": 522,
+   "calls": 2,
+   "cost_usd": 0.099101,
+   "session": 2,
+   "turn": 2,
+   "seconds": 5.72,
+   "prompt": "New data was loaded. Re-run the orders checks and summarize."
+  },
+  {
+   "tools": [
+    "remember"
+   ],
+   "stop_reason": "end_turn",
+   "input": 4,
+   "cache_read": 11057,
+   "cache_write": 528,
+   "output": 294,
+   "calls": 2,
+   "cost_usd": 0.1114324,
+   "session": 2,
+   "turn": 3,
+   "seconds": 4.18,
+   "prompt": "Actually, set my severity_threshold to medium, not high."
+  },
+  {
+   "tools": [
+    "log_incident"
+   ],
+   "stop_reason": "end_turn",
+   "input": 4,
+   "cache_read": 11966,
+   "cache_write": 439,
+   "output": 299,
+   "calls": 2,
+   "cost_usd": 0.1233336,
+   "session": 2,
+   "turn": 4,
+   "seconds": 3.5,
+   "prompt": "Log an incident for the null customer_ids, severity medium."
+  },
+  {
+   "tools": [
+    "list_incidents"
+   ],
+   "stop_reason": "end_turn",
+   "input": 4,
+   "cache_read": 12774,
+   "cache_write": 376,
+   "output": 250,
+   "calls": 2,
+   "cost_usd": 0.1339124,
+   "session": 2,
+   "turn": 5,
+   "seconds": 3.47,
+   "prompt": "List the open incidents."
+  }
+ ],
+ "totals": {
+  "input": 34,
+  "cache_read": 71631,
+  "cache_write": 6668,
+  "output": 3299,
+  "calls": 17,
+  "cost_usd": 0.7069018,
+  "cache_hit_pct": 91.4
+ },
+ "checks": {
+  "rules_saved": true,
+  "contradiction_replaced_not_duplicated": true,
+  "incidents_have_right_severity": true,
+  "external_csv_reread_after_swap": true,
+  "memory_survived_new_instance": true,
+  "history_continued": true
+ },
+ "checks_passed": "6/6",
+ "harness_lines": {
+  "context": 1,
+  "history": 1,
+  "memory": 2,
+  "loop": 1,
+  "tokens": 1,
+  "tools": 3,
+  "config_total": 113
+ }
+}

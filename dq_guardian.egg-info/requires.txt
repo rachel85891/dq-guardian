@@ -1,0 +1,6 @@
+anthropic==2.3.0
+claude-agent-sdk==0.2.174
+mcp==2.3.0
+
+[test]
+pytest==9.1.1

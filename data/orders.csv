@@ -1,0 +1,7 @@
+order_id,customer_id,amount,status,created_at
+1,c1,120.5,paid,2026-10-01
+2,c2,,paid,2026-10-01
+3,c3,75.0,refunded,2026-10-02
+4,c1,-5.0,paid,2026-10-02
+5,,310.0,paid,2026-10-03
+5,c4,42.0,pending,2026-10-03
