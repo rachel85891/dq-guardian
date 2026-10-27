@@ -3,3 +3,5 @@ __pycache__/
 .pytest_cache/
 results/_state_*/
 .env
+*.egg-info/
+.ruff_cache/

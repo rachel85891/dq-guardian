@@ -1,9 +1,0 @@
-Metadata-Version: 2.4
-Name: dq-guardian
-Version: 0.1.0
-Requires-Python: >=3.10
-Requires-Dist: anthropic==2.3.0
-Requires-Dist: claude-agent-sdk==0.2.174
-Requires-Dist: mcp==2.3.0
-Provides-Extra: test
-Requires-Dist: pytest==9.1.1; extra == "test"
